@@ -1,0 +1,91 @@
+\chapter{Evoluzione e Qualità dei Processi ETL}
+L’efficienza e l’affidabilità dei processi ETL sono elementi centrali per la qualità e la tempestività dei dati nel contesto delle architetture di BI. Analizzando metriche strutturali e strategie di ottimizzazione, si introducono delle metodologie per migliorare le \textit{performance}, ridurre i costi e garantire accuratezza elevata. Questo \textit{focus} fa parte del panorama delle tecnologie e metodologie che caratterizzano l’infrastruttura centrale della gestione dei dati.
+
+\section{Metriche strutturali e impatto sull'efficienza}
+L’analisi delle metriche strutturali relative ai processi ETL rappresenta un punto chiave di comprensione dell’impatto della complessità architetturale sul \textit{throughput}. Il conteggio di nodi di \textit{join}, \textit{lookup}, \textit{script}, \textit{row-set} e \textit{input-output }del \textit{Data Process Graph} (DPG) fornisce una metrica complessiva del livello di complessità del processo. Un monitoraggio continuo di queste metriche, secondo quanto suggerito da El Akkaoui et al. (2019)\cite{ElAkkaouiEtAl2019}, consente di prevenire potenziali colli di bottiglia del processo ETL, migliorando di conseguenza il \textit{throughput} complessivo. Tutte le decisioni di progettazione devono quindi avere l'obbiettivo di ottimizzare le aree con maggior complessità architetturale ed impatto sul \textit{throughput}, ad esempio i nodi di \textit{script} e \textit{join}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{./adds/Evoluzione_e_Qualità_dei_Processi_ETL/Una_progettazio_e_basata_su_UML_di_un_workflow_ETL.png}
+    \caption{Esempio di progettazione UML di un \textit{workflow} ETL. (Ali \& Wrembel 2017 p. 780)\cite{AliWrembel2017}}
+    \label{fig:UML}
+\end{figure}
+
+Un altro fattore importante riguarda la comparazione dell’influenza che hanno i nodi di \textit{branching}, rispetto ai nodi di \textit{script} e \textit{join}, sul \textit{throughput} di un processo ETL. Da quanto suggerito da El Akkaoui et al. (2019)\cite{ElAkkaouiEtAl2019}, i nodi di \textit{branching} hanno un impatto non significativo sul \textit{throughput}, al contrario di quanto accade se vengono aggiunti più nodi di tipo \textit{join} e \textit{script}. Questi ultimi impattano negativamente sul \textit{throughput} di un processo ETL, mentre l’aggiunta di rami complessi ha un impatto marginale sulle \textit{performance}. Questo suggerisce di creare \textit{branching} più complessi al fine di ottenere processi ETL più dinamici e manutenibili senza preoccuparsi di ridurre il \textit{throughput} del processo. Bisogna però sempre pensare a come bilanciare le \textit{performance} e la dinamicità di un processo ETL, riducendo al minimo la presenza dei nodi di tipo \textit{script} e \textit{join}.
+\\ \\
+L’accuratezza dei dati di un processo ETL dipende fortemente dalla modellazione concettuale del \textit{workflow}. Dalla ricerca condotta da Theodorou et al. (2016)\cite{TheodorouEtAl2016}, il modello CM\_B (\autoref{fig:etl_b}), che possiede un livello di complessità concettuale maggiore rispetto al modello CM\_A (\autoref{fig:etl_a}), consente di generare dati più accurati. Questo è dovuto all’aggiunta di regole e controlli aggiuntivi al modello concettuale che garantiscono un’elevata integrità e accuratezza dei dati di \textit{output}. Tuttavia, maggiore è il numero di regole implementate, più elevati sono i tempi di elaborazione. In contesti con alta criticità, in cui l’accuratezza dei dati è fondamentale, è preferibile utilizzare modelli concettuali complessi (Theodorou et al. 2014)\cite{TheodorouAbelloLehner2014}, mentre, se non vi sono vincoli sull’accuratezza dei dati, è preferibile utilizzare modelli concettuali più semplici per ridurre il tempo di esecuzione del processo ETL. \\
+
+\begin{figure}[H]
+    \centering
+
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./adds/Evoluzione_e_Qualità_dei_Processi_ETL/CM_A.png}
+        \caption{Rappresentazione logica del processo ETL iniziale che corrisponde a CM\_A.}
+        \label{fig:etl_a}
+    \end{subfigure}
+
+    \vspace{1em} % spazio verticale tra le immagini
+
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{./adds/Evoluzione_e_Qualità_dei_Processi_ETL/CM_B.png}
+        \caption{Rappresentazione logica del processo ETL equivalente con i passaggi aggiuntivi che corrisponde a CM\_B.}
+        \label{fig:etl_b}
+    \end{subfigure}
+
+    \caption{Modelli logici di processi ETL alternativi. (Theodorou et al., 2016 p. 10)\cite{TheodorouEtAl2016}}
+    \label{fig:etl_processes}
+\end{figure}
+
+L’usabilità, la manutenibilità e le \textit{performance} sono tutti obiettivi di qualità essenziali nella progettazione dei processi ETL e spesso necessitano di bilanciamenti tra loro. Secondo Theodorou et al. (2014)\cite{TheodorouAbelloLehner2014}, un aumento dell’usabilità del \textit{workflow} facilita le operazioni di manutenzione e contribuisce alla diminuzione del rischio di errori dovuti alla manipolazione dello stesso. L’aggiunta di un maggior numero di operazioni e vincoli di controllo a tale processo, in molti casi, impatta negativamente sulle \textit{performance}, in particolare sul \textit{throughput}, specialmente se si eseguono processi ETL per molti elementi di dati (Theodorou et al. 2016)\cite{TheodorouEtAl2016}. Una sfida fondamentale per la progettazione di \textit{workflow} ETL risiede nel trovare un equilibrio adeguato tra i compromessi dovuti ai vincoli progettuali e le priorità dell’organizzazione.
+\\ \\
+L’utilizzo di rappresentazioni dei \textit{workflow} ETL tramite grafi o \textit{Unified Modeling Language} (UML) non consente l’automatizzazione nella progettazione per la gestione di dati semi-strutturati o non strutturati. Come sottolineato da Ali \& Wrembel (2017)\cite{AliWrembel2017}, la progettazione di \textit{workflow} ETL per dati non strutturati richiede esperienza di progettazione, in quanto non vi sono algoritmi di progettazione con un risultato ottimale certo, che massimizzino le metriche strutturali. Lo studio pone quindi una sfida su come poter generare \textit{workflow} ETL in modo automatico e ottimizzare le proprie strutture tenendo presente le metriche di \textit{performance} più importanti di questo.
+\\ \\
+Polyvyanyy et al. (2017)\cite{PolyvyanyyEtAl2017}, in un'indagine scientometrica, identifica in parte una lacuna nella ricerca accademica sull’importanza della correlazione tra le metriche strutturali e le metriche valutative sui processi ETL e del valore analitico derivato.
+
+\section{Ottimizzazione dei processi di estrazione e trasformazione}
+Ottimizzare i processi di estrazione e trasformazione rappresenta una delle fasi più critiche al fine di migliorare il \textit{throughput} e di garantire la qualità dei dati in un contesto di BI. La valutazione delle \textit{performance} della struttura di una \textit{pipeline} ETL aiuta ad identificare i colli di bottiglia durante i processi di estrazione, trasformazione e caricamento. I nodi che influiscono negativamente sul \textit{throughput} sono: di \textit{join}, di \textit{script}, di \textit{lookup}, i \textit{row-set} e gli \textit{input-output}. La presenza di \textit{join} e di \textit{script} rallentano i processi, mentre il miglioramento generale si può raggiungere implementando le tecniche di \textit{tuning} attraverso l’utilizzo di \textit{lookup} (El Akkaoui et al., 2019)\cite{ElAkkaouiEtAl2019}.
+\\ \\
+L’implementazione di metriche strutturali derivate dal DPG fornisce un approccio più oggettivo per la valutazione dell’efficacia di una \textit{pipeline} ETL rispetto ad un’altra, offrendo un metodo comparativo più sensibile alla differenza tra diversi \textit{workflow}. La valutazione delle \textit{performance} attraverso le metriche strutturali si rivela un valido approccio in contesti in cui la quantità di dati è molto alta e non si hanno a disposizione algoritmi di analisi della struttura della \textit{pipeline} ETL (El Akkaoui et al., 2019)\cite{ElAkkaouiEtAl2019}.
+\\ \\
+In realtà, un’estrema attenzione all’ottimizzazione delle \textit{performance} può diminuire la manutenibilità del codice e la qualità dei dati. Risulta perciò importante un approccio olistico alla valutazione delle \textit{performance} per ottimizzare anche manutenibilità e accuratezza. In altre parole, per ottimizzare la \textit{pipeline} ETL occorre trovare un bilanciamento tra le tre dimensioni (Theodorou et al., 2016)\cite{TheodorouEtAl2016}.
+\\ \\
+La sostituzione dei nodi \textit{join} multipli con nodi di \textit{script} o di \textit{lookup} rappresenta una delle tecniche più efficaci, contribuendo alla riduzione dei tempi di esecuzione e migliorando il \textit{throughput} di una \textit{pipeline} ETL. I nodi di \textit{lookup} risultano più efficienti dei nodi di \textit{script} perché le operazioni sui \textit{lookup} necessitano di minore potenza computazionale e il tempo per accedere ai dati intermedi è minore (El Akkaoui et al., 2019)\cite{ElAkkaouiEtAl2019}. \\
+
+\begin{figure}[H]
+    \centering
+
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./adds/Evoluzione_e_Qualità_dei_Processi_ETL/Throughput_per_numero_di_nodi.png}
+        \caption{Throughput per numero di nodi.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{./adds/Evoluzione_e_Qualità_dei_Processi_ETL/lookup_join_script.png}
+        \caption{Confronto nodi: lookup, join e script.}
+    \end{subfigure}
+
+    \caption{\textit{Row-Set Nodes} (RSN); \textit{Lookup Nodes} (LN); \textit{Input-Output Nodes} (ION); \textit{Row-by-Row Nodes} (RbRN); \textit{Script Nodes} (SN); \textit{Branching Nodes} (BN); \textit{Join Nodes} (JN); Misura \textit{Cohesion Action} calcolata su un nodo dello \textit{script} di \textit{Data Input} (CA-DI). (El Akkaoui et al., 2019 p. 9)\cite{ElAkkaouiEtAl2019}}
+    \label{fig:etl_processes}
+\end{figure}
+
+In molti studi sono state proposte tecniche di validazione al fine di migliorare la qualità dei dati delle \textit{pipeline} ETL. L’implementazione di un meccanismo di controlli di accuratezza e correzione nei modelli concettuali delle \textit{pipeline} ETL migliora significativamente la qualità dei dati; l’accuratezza dei dati si avvicina al \SI{100}{\percent}, ma a questo vantaggio segue un costo di tempo di esecuzione di circa il \SI{45}{\percent} più alto rispetto alle \textit{pipeline} che non implementano controlli di qualità (Theodorou et al., 2016)\cite{TheodorouEtAl2016}.
+\\ \\
+Tali meccanismi aumentano l’accuratezza dei dati ma, allo stesso tempo, aumentano i tempi di esecuzione e le risorse computazionali. È necessario, perciò, la realizzazione di strumenti per il monitoraggio e per la simulazione dell’esecuzione della \textit{pipeline} ETL al fine di scegliere in modo più adatto tra un \textit{design} ed un altro (Theodorou et al., 2016)\cite{TheodorouEtAl2016}.
+\\ \\
+Ci sono modelli concettuali di \textit{pipeline} ETL molto dettagliati ma questi sono adatti in contesti dove la latenza non è il vincolo più importante. In contesti dove la frequenza di aggiornamento del \textit{data warehouse} è più importante dei controlli di qualità dei dati, viene utilizzato un modello meno preciso ed il sistema di progettazione delle \textit{pipeline} ETL è semplice e veloce (Theodorou et al., 2016)\cite{TheodorouEtAl2016}.
+\\ \\
+La scelta del modello di progettazione di un \textit{workflow} ETL influenza l’utilizzo di risorse specialistiche (tempo dello sviluppatore, tempo di validazione, ecc.) e la possibilità di elaborare dati semi-strutturati e non strutturati. Il metodo UML, ad esempio, presenta una scarsa manutenibilità a fronte di un elevato numero di entità e relazioni da gestire. I modelli basati sui grafi non sono automatizzabili e sono difficili da interpretare in domini complessi. È necessario, perciò, l’automazione della generazione e dell’ottimizzazione dei \textit{workflow} tramite l’utilizzo di tecniche e di strumenti che supportino l’implementazione di metriche strutturali. Inoltre, i metodi di auto-ottimizzazione e \textit{feedback} riducono le attività di validazione ed ottimizzano il flusso, minimizzando il ruolo dei professionisti (Ali \& Wrembel, 2017)\cite{AliWrembel2017}.
+\\ \\
+Dalle analisi della letteratura esaminata emerge anche che non ci sono metodi efficienti di ottimizzazione dell’esecuzione di \textit{workflow} ETL, ma non si conosce se questo rappresenti una direzione di ricerca già esplorata. Inoltre, si evidenzia anche una scarsa integrazione tra metriche di qualità e strumenti di ottimizzazione del \textit{workflow} e ciò rappresenta un’opportunità di studio nell’area \textit{data-driven}, in combinazione con il \textit{machine learning} (Ali \& Wrembel, 2017)\cite{AliWrembel2017}.
+\\ \\
+La ricerca di sistemi di \textit{self-tuning} di \textit{workflow} ETL che si adattano a cambiamenti nelle proprietà dei dati rappresenta una prospettiva molto innovativa ed è un’evoluzione del \textit{framework} ETL, che ha finora supportato solamente un livello base di controllo del \textit{workflow} (Ali \& Wrembel, 2017)\cite{AliWrembel2017}.
+\\ \\
+In un contesto di \textit{Big Data}, per l’ottimizzazione delle \textit{pipeline} ETL si rende necessario utilizzare algoritmi in grado di affrontare la sfida della scalabilità. Le architetture a larga scala utilizzano, perciò, tecniche che permettono il partizionamento parallelo della trasformazione, le \textit{pipeline} distribuiscono i \textit{task} attraverso molti esecutori in un \textit{cluster} e gestiscono l’acquisizione di dati simultanei da molteplici fonti. Inoltre, le nuove \textit{pipeline} sono implementate con architetture modulari e \textit{tool software} che supportano l’integrazione delle nuove fonti di dati e la gestione in remoto delle \textit{pipeline}. In ultimo, la scelta di monitorare e ottimizzare una \textit{pipeline} ETL in \textit{runtime} con l’uso di motori di coordinamento può automatizzare una larga gamma di attività e migliorare le \textit{performance} (Goud, 2024)\cite{Goud2024}.
+\\ \\
+Un’ottimizzazione più spinta è data da un miglioramento dei tempi di esecuzione delle \textit{query} analitiche attraverso l’uso di viste materializzate, tecniche di selezione \textit{multi-query }e la combinazione di approcci per minimizzare i tempi di aggiornamento del \textit{data} \textit{warehouse}. La combinazione delle \textit{pipeline} ETL con le \textit{query} analitiche contribuisce ad una sensibile diminuzione dei tempi di latenza del \textit{data warehouse}. La dipendenza delle \textit{query} di BI dalle \textit{pipeline} ETL richiede una comunicazione continua tra i componenti ETL e i progettisti dei \textit{data warehouse} per un coordinamento ottimale delle \textit{performance} (Boukorca et al., 2015; \cite{BoukorcaEtAl2015} Alapaty \& Rao, 2024 \cite{AlapatyRao2024}).
+\\ \\
+Da quanto esposto da Boukorca et al. (2015)\cite{BoukorcaEtAl2015}, si evince che le \textit{pipeline} ETL influenzano significativamente l’efficacia di un \textit{data warehouse}, sia in termini di costi, che di \textit{performance}. In altre parole, più le \textit{pipeline} ETL sono efficaci, e quindi i costi totali del \textit{data warehouse} sono bassi, più è probabile ottenere \textit{performance} migliori, specialmente l'implementazione e la manutenzione delle viste materializzate (Boukorca et al., 2015)\cite{BoukorcaEtAl2015}. L’ottimizzazione di estrazione e trasformazione è fondamentale per aumentare la scalabilità delle \textit{pipeline} ETL e garantire dati di alta qualità in tempi ridotti.

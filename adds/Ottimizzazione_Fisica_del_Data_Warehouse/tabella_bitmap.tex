@@ -1,0 +1,60 @@
+\begin{figure}[H]
+    \centering
+
+    % (a) Product dimension table con resize
+    \caption*{(a) Tabella delle dimensioni di \textit{Product}.}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llllll}
+        \toprule
+        \textbf{ProductKey} & \textbf{ProductName} & \textbf{QuantityPerUnit} & \textbf{UnitPrice} & \textbf{Discontinued} & \textbf{CategoryKey} \\
+        \midrule
+        p1 & prod1 & 25 & 60 & No & c1 \\
+        p2 & prod2 & 45 & 60 & Yes & c1 \\
+        p3 & prod3 & 50 & 75 & No & c2 \\
+        p4 & prod4 & 50 & 100 & Yes & c2 \\
+        p5 & prod5 & 50 & 120 & No & c3 \\
+        p6 & prod6 & 70 & 110 & Yes & c4 \\
+        \bottomrule
+    \end{tabular}
+    }
+
+    \vspace{1.5em}
+
+    % Tabelle (b) e (c) affiancate
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \caption*{(b) Indice bitmap per l'attributo \textit{QuantityPerUnit};}
+        \begin{tabular}{lcccc}
+            \toprule
+             & 25 & 45 & 50 & 70 \\
+            \midrule
+            p1 & 1 & 0 & 0 & 0 \\
+            p2 & 0 & 1 & 0 & 0 \\
+            p3 & 0 & 0 & 1 & 0 \\
+            p4 & 0 & 0 & 1 & 0 \\
+            p5 & 0 & 0 & 1 & 0 \\
+            p6 & 0 & 0 & 0 & 1 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \caption*{(c) Indice bitmap per l'attributo \textit{UnitPrice}.}
+        \begin{tabular}{lccccc}
+            \toprule
+             & 60 & 75 & 100 & 110 & 120 \\
+            \midrule
+            p1 & 1 & 0 & 0 & 0 & 0 \\
+            p2 & 1 & 0 & 0 & 0 & 0 \\
+            p3 & 0 & 1 & 0 & 0 & 0 \\
+            p4 & 0 & 0 & 1 & 0 & 0 \\
+            p5 & 0 & 0 & 0 & 0 & 1 \\
+            p6 & 0 & 0 & 0 & 1 & 0 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+
+    \caption{Esempio di indici \textit{bitmap} per una tabella delle dimensioni di \textit{Product}. (Vaisman e Zimányi, 2022 p. 269)\cite{VaismanZimanyi2022}}
+    \label{fig:bitmap_indexes}
+\end{figure}

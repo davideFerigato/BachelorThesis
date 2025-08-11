@@ -1,0 +1,19 @@
+\begin{table}[H]
+    \centering
+    \caption{Comparazione di A* e algoritmi esaustivi. (Labio et al., 1996 p. 12)\cite{LabioQuassAdelberg1996}}
+    \label{tab:astar_comparison}
+    \resizebox{\textwidth}{!}{%
+      \begin{tabular}{rrrrr}
+        \toprule
+        \textbf{\# relations} & \textbf{\# selections} & \textbf{\# states visited (exhaustive)} & \textbf{\# states visited (A*)} & \textbf{\% pruned} \\
+        \midrule
+         2 & 0 &       32       &   11   &  67.7 \\
+         2 & 1 &      192       &   21   &  89.1 \\
+         2 & 2 &      960       &   28   &  97.1 \\
+         2 & 4 &      960       &   29   &  97.0 \\
+         3 & 1 &  2\,115\,072   & 17\,735 &  99.2 \\
+         3 & 2 & 10\,575\,360   & 22\,809 &  99.8 \\
+        \bottomrule
+      \end{tabular}%
+    }
+\end{table}

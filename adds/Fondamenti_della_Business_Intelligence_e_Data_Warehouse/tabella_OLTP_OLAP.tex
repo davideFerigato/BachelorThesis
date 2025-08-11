@@ -1,0 +1,27 @@
+\begin{table}[H]
+    \centering
+    \caption{Confronto tra sistemi OLTP e OLAP. (Renso \& Gozzi, 1990 p. 15)\cite{RensoGozzi1990}}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l l l}
+        \toprule
+        \textbf{Caratteristica} & \textbf{OLTP} & \textbf{OLAP} \\
+        \midrule
+        Funzione & gestione giornaliera & supporto alle decisioni \\
+        Progettazione & orientata alle applicazioni & orientata al soggetto \\
+        Frequenza & giornaliera & sporadica \\
+        Dati & recenti, dettagliati & storici, riassuntivi, multidimensionali \\
+        Sorgente & singola DB & DB multiple \\
+        Uso & ripetitivo & ad hoc \\
+        Accesso & read/write & read \\
+        Flessibilità accesso & uso di programmi precompilati & generatori di query \\
+        \# record acceduti & decine & migliaia \\
+        Tipo utenti & operatori & manager \\
+        \# utenti & migliaia & centinaia \\
+        Tipo DB & singola & multiple, eterogenee \\
+        Performance & alta & bassa \\
+        Dimensione DB & 100 MB - GB & 100 GB - TB \\
+        \bottomrule
+    \end{tabular}
+    }
+    \label{tab:oltp_olap}
+\end{table}

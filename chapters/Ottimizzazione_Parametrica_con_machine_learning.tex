@@ -1,0 +1,115 @@
+\chapter{Ottimizzazione Parametrica con machine learning}
+L’uso del \textit{machine learning} per l’ottimizzazione parametrica delle \textit{query} costituisce un ulteriore obiettivo di evoluzione delle architetture di \textit{Business} \textit{Intelligence}. Tale processo mira a facilitare la pianificazione delle \textit{query}, la gestione delle viste materializzate e a ottimizzare le \textit{performance} di risposta. Questa sezione introduce dunque un aspetto chiave e strategico, legato alla precedente e facente parte dell’idea di fondo di tale elaborato.
+
+\section{Approcci data-driven per l'ottimizzazione query}
+Gli approcci \textit{data-driven} all’ottimizzazione delle \textit{query} in sistemi BI superano le metodologie tradizionali integrando sistemi di \textit{machine learning}, per prevedere i piani di esecuzione più ottimali e selezionarli in modo dinamico. Rispetto agli ottimizzatori tradizionali presenti nei DBMS, questi metodi risultano più robusti e adattabili a differenti tipi di carico di lavoro. Utilizzando, ad esempio, modelli \textit{Structured Neural Gaussian Process} (SNGP)in sistemi come Kepler, si riesce a catturare fino all’\SI{80,8}{\percent} dei guadagni prestazionali massimi che possono essere ottenuti con le \textit{query}. Questo è reso possibile con una percentuale di errore di previsione incredibilmente bassa, dimostrando la solidità di un approccio \textit{data-driven} rispetto ad un approccio basato su euristiche statiche (Doshi et al., 2023)\cite{DoshiEtAl2023}.
+\\ \\
+Un altro vantaggio proposto da questi metodi è il basso tempo di inferenza di \SI{0,15}{\milli\second} impiegato in media per trovare il piano di esecuzione migliore di una \textit{query}, riuscendo a migliorare la capacità di pianificazione rispetto agli approcci tradizionali di oltre il \SI{95}{\percent} (Doshi et al., 2023)\cite{DoshiEtAl2023}. Ciò permette prestazioni eccellenti nei sistemi di BI, dove la rapidità di risposta è un elemento critico per il supporto decisionale aziendale. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{./adds/Ottimizzazione_Parametrica_con_machine_learning/SNGP.png}
+    \caption{Kepler ottiene un’accelerazione complessiva di 2,41× su \textit{Stack} grazie all’individuazione di piani di esecuzione migliori con \textit{Row Count Evolution} (RCE), al cuore predittivo degli SNGP che massimizza il guadagno minimizzando le regressioni e a un tempo di inferenza del modello estremamente rapido. (Doshi et al., 2023 p. 109:3)\cite{DoshiEtAl2023}}
+    \label{fig:classifica_viste}
+\end{figure}
+
+L’efficacia degli approcci \textit{data-driven} si basa su ampie quantità di dati per la costruzione dei modelli. Kepler, ad esempio, utilizza 14,2 anni di carico di lavoro della CPU (Doshi et al., 2023)\cite{DoshiEtAl2023}. Ciò permette di apprendere il funzionamento del sistema con accuratezza e di generalizzare efficacemente. Un altro vantaggio di questi modelli \textit{data-driven} è la possibilità di essere applicati a diverse applicazioni, sistemi ed architetture (Doshi et al., 2023 \cite{DoshiEtAl2023}; Mami \& Bellahsene, 2012 \cite{MamiBellahsene2012}). Inoltre, il modello è in grado di adattarsi nel tempo a vari carichi di lavoro (Doshi et al., 2023)\cite{DoshiEtAl2023}. I sistemi euristici, per loro natura, tendono a funzionare bene con una specifica tipologia di carico di lavoro e male con un’altra (Mami \& Bellahsene, 2012)\cite{MamiBellahsene2012}.
+\\ \\
+Una particolare applicazione delle tecniche \textit{data-driven} è quella relativa all’individuazione delle viste materializzate migliori. Sfruttando le frequenze di utilizzo e altre informazioni della \textit{query} presenti in appositi \textit{log}, si cerca una combinazione di viste che minimizzi i tempi di esecuzione e di accesso ai dati (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. L’ottimizzazione delle viste materializzate è un problema NP-completo, per questo vengono usati degli algoritmi ibridi, ottenendo soluzioni che migliorano le prestazioni senza impattare troppo sulle necessità di spazio di \textit{storage} (Mami \& Bellahsene, 2012)\cite{MamiBellahsene2012}.
+\\ \\
+La capacità degli algoritmi "intelligenti" per le viste materializzate garantisce un ciclo di vita efficace delle informazioni, riducendo i costi operativi e migliorando la coerenza (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. Grazie ad algoritmi che sfruttano la cronologia dei \textit{log} delle \textit{query}, si possono valutare costantemente i costi e i benefici per decidere in maniera efficace quale combinazione di viste materializzare (Mami \& Bellahsene, 2012)\cite{MamiBellahsene2012}.
+\\ \\
+L’adozione delle tecniche \textit{data-driven} nei sistemi di BI è una componente fondamentale di successo poiché la qualità dei risultati favorisce l’affidabilità e la fiducia verso il sistema (Appelbaum et al., 2017)\cite{AppelbaumEtAl2017}. Considerando che molti sistemi di BI non offrono solo analisi descrittive ma anche predittive e prescrittive, è importante avere la sicurezza che l’elaborazione del modello e l’inferenza siano le migliori possibili (Appelbaum et al., 2017)\cite{AppelbaumEtAl2017}. I sistemi di BI basati su tecniche \textit{data-driven}, utilizzando modelli di \textit{machine learning}, sono un ottimo metodo per migliorare le \textit{performance} aziendali, consentendo l’espansione e l’innovazione della capacità di analisi dei sistemi decisionali (Appelbaum et al., 2017)\cite{AppelbaumEtAl2017}.
+\\ \\
+Il principale punto critico degli approcci \textit{data-driven} è la dipendenza dalla qualità dei dati utilizzati (Appelbaum et al., 2017)\cite{AppelbaumEtAl2017}. Bisogna quindi essere particolarmente precisi nella pulizia dei dati e nella selezione delle variabili da utilizzare come  \textit{input} (Appelbaum et al., 2017)\cite{AppelbaumEtAl2017}. Inoltre, per una maggiore precisione ed accuratezza del modello, sarebbe utile combinare le tecniche \textit{data-driven} di ottimizzazione delle \textit{query} con sistemi ETL efficienti e con un’architettura fisica efficiente del \textit{data warehouse}. Un sistema \textit{data-driven} è un sistema più adattabile, con più possibilità di espansione in scenari in continua evoluzione (Doshi et al., 2023)\cite{DoshiEtAl2023}. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{./adds/Ottimizzazione_Parametrica_con_machine_learning/Architettura_Kepler.png}
+    \caption{Architettura di Kepler. (Doshi et al., 2023 p. 109:6)\cite{DoshiEtAl2023}}
+    \label{fig:Architettura_Kepler}
+\end{figure}
+
+L’implementazione di approcci predittivi e prescrittivi nei sistemi di BI è considerata elemento cruciale per l’innovazione della strategia aziendale (Appelbaum et al., 2017)\cite{AppelbaumEtAl2017}. Con un’analisi scientometrica di venti anni di pubblicazioni scientifiche che riguardano l’integrazione di intelligenza artificiale nei sistemi di BI, Qiu et al. (2019)\cite{QiuEtAl2019} hanno riscontrato una rapida crescita delle pubblicazioni durante il periodo esaminato, con un forte interesse verso gli algoritmi di AI applicati ai \textit{big} \textit{data}, il supporto decisionale, il \textit{knowledge} \textit{discovery} e la gestione della qualità delle informazioni. I \textit{cluster} tematici emergenti più diffusi sono “\textit{big data}”, “\textit{cost justification}” e “\textit{decision-making}” (Qiu et al., 2019)\cite{QiuEtAl2019}.
+\\ \\
+L’analisi dell’ambito disciplinare in cui i vari articoli sono stati pubblicati dimostra una crescita anche negli ambiti non ingegneristici, come quello economico e gestionale. Questo mostra come sia necessario trovare algoritmi che funzionino in diversi contesti applicativi, affrontando le problematiche di scalabilità e flessibilità del codice (Qiu et al., 2019)\cite{QiuEtAl2019}. Inoltre, i due paesi con la maggior parte delle pubblicazioni per quanto riguarda l’integrazione di algoritmi di AI nei sistemi di BI sono gli Stati Uniti e la Cina, implicando come la maggior parte degli studi e delle sperimentazioni su questo specifico argomento avvengano in questi stati (Qiu et al., 2019)\cite{QiuEtAl2019}.
+
+\input{./adds/Ottimizzazione_Parametrica_con_machine_learning/tabella_stati}
+
+Molti campi di ricerca, pur essendo importanti, presentano ancora delle lacune. Con i sistemi \textit{data-driven}, a causa della loro natura, è necessario aggiornare il modello e re-imparare il funzionamento del sistema ogniqualvolta vi siano nuove informazioni da acquisire (Qiu et al., 2019)\cite{QiuEtAl2019}. Avere un sistema che sia in grado di auto-adattarsi e continuare ad apprendere in maniera continuativa è il punto debole dei modelli attualmente disponibili, ma è un elemento essenziale da migliorare per avere modelli il cui rendimento sia sostenibile anche nel lungo periodo e con l’aumentare dei dati di \textit{input}. Inoltre, la necessità di auto-apprendere in maniera continuativa impedisce l’integrazione dei sistemi \textit{data-driven} in diverse applicazioni (Qiu et al., 2019)\cite{QiuEtAl2019}.
+\\ \\
+Al \textit{retailer} Americanas.com, ad esempio, la necessità di gestire un sistema con quasi 1,4 miliardi di \textit{record} delle transazioni ed una quantità di \textit{workload} elevata e sempre crescente ha evidenziato l’importanza di trovare metodi intelligenti di gestione dei \textit{data warehouse} (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. Questa è una problematica condivisa da molte altre compagnie. Diversi rivenditori del settore della vendita al dettaglio devono gestire 15 miliardi di \textit{record} di vendite o al fine di essere in grado di rispondere efficacemente alla crescente domanda di analisi e di \textit{report} generati. Un ulteriore esempio è Amazon.com che ha bisogno di rispondere alle \textit{query} di oltre 38 milioni di clienti, ricevendo 2.700 ordini di vendita al minuto. Ciò rende la scelta corretta delle viste materializzate una sfida critica (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. Le viste selezionate da algoritmi automatici \textit{data-driven}, in un \textit{retailer} che gestisce più di 100 milioni di elementi di \textit{merchandising}, comporta una riduzione dal \SI{58}{\percent} all’\SI{89}{\percent} dei tempi di risposta (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}.
+\\ \\
+Come ulteriore esempio concreto, il caso del database per la gestione delle licenze di un rivenditore, di 200 GB (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}, su cui l’individuazione automatica delle viste materiale da usare (\textit{selection phase}) e degli elementi da rimpiazzare (\textit{replacement phase}) tramite un algoritmo genetico ibrido ha migliorato i tempi di esecuzione dal \SI{49}{\percent} al \SI{71}{\percent} con gli aggiornamenti incrementali (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. Per l’eliminazione periodica, l’utilizzo degli algoritmi genetici ibridi ha generato una selezione delle viste materiali che ha funzionato meglio del \SI{42}{\percent} rispetto agli algoritmi classici \textit{data-driven} (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. Anche in questo caso, gli aggiornamenti sono stati eseguiti in modalità incrementale (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}.
+\\ \\
+Infine, utilizzando un’architettura che supporti la \textit{query} pre-esecuzione per determinare le viste da eliminare tramite la predizione degli utilizzi delle \textit{query}, si riesce a ridurre ancora di più lo sforzo impiegato per la manutenzione del sistema (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}. Questo è utile in diversi settori operativi di grandi dimensioni. Infatti, gli scenari descritti finora richiedono un elevato \textit{throughput} di dati e, di conseguenza, è necessario utilizzare un sistema di BI in grado di eseguire migliaia di \textit{query} al giorno, anche in maniera continuativa. Tale domanda crescente non riguarda solamente le compagnie di rivenditori al dettaglio, ma diversi settori operativi quali il settore dell’\textit{ecommerce} (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}.
+\\ \\
+Tutte le metodologie esposte finora dimostrano che l’utilizzo di un approccio \textit{data-driven} sia un ottimo compromesso per avere un sistema di BI molto performante con la possibilità di ottimizzare le risorse utilizzate per eseguire un’attività.
+
+\section{Implementazione e risultati del sistema Kepler}
+L’implementazione e i risultati di Kepler rappresentano un passo avanti nell’ottimizzazione parametrica delle \textit{query} mediante tecniche di \textit{machine learning}, a supporto del miglioramento delle capacità di \textit{Business Intelligence}. La peculiarità di questo sistema risiede nel combinare in modo efficace modelli statistici sofisticati, quali l'SNGP, capaci di raggiungere fino all’\SI{80,8}{\percent} del potenziale di miglioramento, con l’obiettivo di ridurre drasticamente la frequenza delle regressioni, attestandosi su valori prossimi a zero, e ottenendo tempi di inferenza inferiori al \SI{5}{\percent} rispetto ai tempi di pianificazione che vengono normalmente impiegati da DBMS, come PostgreSQL (Doshi et al., 2023)\cite{DoshiEtAl2023}. Questo risultato dimostra come la gestione efficiente e rapida dei carichi di lavoro possa portare a un risparmio di costi significativi, fondamentale in contesti dove la reattività è un fattore chiave.
+
+\begin{figure}
+  \centering
+
+  % (a) Tabella
+  \begin{subfigure}[t]{0.28\textwidth}
+    \centering
+    \vspace{0pt}
+    \input{./adds/Ottimizzazione_Parametrica_con_machine_learning/tabella_Kepler}
+    \caption{Accelerazioni di PostgreSQL Kepler su Stack.}
+    \label{fig:kepler_speedups_tab}
+  \end{subfigure}%
+  \hfill
+  % (b) Scatter plot
+  \begin{subfigure}[t]{0.35\textwidth}
+    \centering
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{./adds/Ottimizzazione_Parametrica_con_machine_learning/Scatter_Kepler.png}
+    \caption{Latenze effettive e previste (\si{\milli\second}).}
+    \label{fig:kepler_scatter}
+  \end{subfigure}%
+  \hfill
+  % (c) Istogramma
+  \begin{subfigure}[t]{0.35\textwidth}
+    \centering
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{./adds/Ottimizzazione_Parametrica_con_machine_learning/istogramma_Kepler.png}
+    \caption{Istogramma dei rapporti tra i tempi di inferenza del modello e i tempi di pianificazione in PostgreSQL.}
+    \label{fig:kepler_histogram}
+  \end{subfigure}
+
+  \caption{Valutazione dell'integrazione in PostgreSQL. (Doshi et al., 2023 p. 109:15)\cite{DoshiEtAl2023}}
+  \label{fig:postgresql_kepler}
+\end{figure}
+
+Grazie all’accelerazione più che doppia su più del \SI{32}{\percent} delle \textit{query} eseguite sul \textit{benchmark} reale Stack, Kepler si afferma come un sistema capace di generalizzare con successo in contesti diversi e con carichi di lavoro disomogenei (Doshi et al., 2023)\cite{DoshiEtAl2023}. Ciò suggerisce che, utilizzando algoritmi di \textit{machine learning} per l’ottimizzazione delle \textit{query}, si possono ottenere miglioramenti tangibili nel tempo di esecuzione anche in ambienti di \textit{Business Intelligence} caratterizzati da grandi quantità di dati eterogenei.
+\\ \\
+Le caratteristiche statistiche delle \textit{query} vengono analizzate da Kepler per predire la selezione dei piani più idonei, anche su dati mai visti durante l’addestramento (Doshi et al., 2023 \cite{DoshiEtAl2023}; Mami \& Bellahsene, 2012 \cite{MamiBellahsene2012}). Il sistema dimostra un’efficace capacità di apprendimento in risposta alle criticità precedentemente elencate in letteratura sull’ottimizzazione delle \textit{query}. Risulta, quindi, molto utile nell’ottimizzazione delle \textit{query} in contesti moderni di \textit{Business Intelligence}, in cui è necessaria la gestione efficiente dei carichi di lavoro ed è difficile prevedere in anticipo la struttura dei dati in cui le \textit{query} andranno a operare.
+\\ \\
+L’addestramento è condotto in 14,2 anni di \textit{workload} CPU in modo da ottenere modelli adatti a rispondere alla diversità di utilizzo dei \textit{data warehouse} e delle piattaforme di \textit{Business Intelligence} (Doshi et al., 2023)\cite{DoshiEtAl2023}. L’analisi approfondita a cui sono sottoposte le \textit{query} consente al sistema di apprendere le regolarità e le anomalie più importanti, risultando efficiente nelle fasi di pianificazione e di ottimizzazione del \textit{workload} e dei costi di esecuzione delle \textit{query}. In più, la fase di ottimizzazione di quest'ultime è resa efficace dall’impatto dei cambiamenti strutturali sull’esecuzione delle stesse rispetto ai sistemi di ottimizzazione che si basano su regole predefinite.
+\\ \\
+Kepler utilizza modelli adatti a TF-Lite, riducendo il tempo medio di inferenza a \SI{0,15}{\milli\second} e adattandosi ai requisiti di bassa latenza per soddisfare le richieste del contesto di riferimento (Doshi et al., 2023)\cite{DoshiEtAl2023}.
+\\ \\
+Grazie all’approccio \textit{data-driven} e di scalabilità, Kepler ottimizza le \textit{query} e i relativi costi di esecuzione anche con l’aumentare della variabilità del comportamento del carico di lavoro. In particolare, attraverso l’apprendimento incrementale, il sistema consente la creazione di modelli capaci di imparare a operare dinamicamente, con tempi di risposta più bassi rispetto agli approcci tradizionali (Doshi et al., 2023)\cite{DoshiEtAl2023}. \\
+
+\includepseudo{./adds/Ottimizzazione_Parametrica_con_machine_learning/codice_RCE.tex}{Algoritmo RCE di Kepler. (Doshi et al., 2023 p. 109:9)\cite{DoshiEtAl2023}}{lst:astar}
+
+Kepler, inoltre, si dimostra efficace in un \textit{data warehouse} la cui progettazione fisica si basa su quattro elementi fondamentali per un’ottima gestione delle \textit{query} tramite il \textit{machine learning}: scelta di modelli multidimensionali, schema di partizionamento, distribuzione delle tabelle dei fatti, tecniche di \textit{machine learning}, come quelle implementate in Kepler, le cui potenzialità possono essere amplificate se la progettazione è sensibile alle caratteristiche e ai \textit{pattern} del carico di lavoro (Baralis, 1992 \cite{Baralis1992}; Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}).
+\\ \\
+La selezione delle viste materializzate, anch’essa ottimizzata con l’utilizzo del \textit{machine learning}, si basa su dati reali e, come per l’ottimizzazione parametrica delle \textit{query}, minimizza i costi d’interrogazione del \textit{data warehouse}. Questa ottimizzazione è particolarmente efficiente quando le tabelle contenenti le viste presentano un numero di righe dell’ordine dei miliardi, come per la vista TotalByItemStore. In tal caso, la cardinalità di TotalByItemStore è ridotta da miliardi a pochi milioni, con un elevato miglioramento delle \textit{performance} del sistema (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}.
+\\ \\
+Grazie alla selezione delle viste materializzate, Kepler riesce a bilanciare le \textit{performance} ottenute durante le interrogazioni con i costi di aggiornamento e di archiviazione delle viste. In tal modo, il sistema dimostra la capacità di rispondere correttamente alla difficoltà di ottenere il miglior compromesso tra queste diverse caratteristiche.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{./adds/Ottimizzazione_Parametrica_con_machine_learning/RCE.png}
+    \caption{Esempio di processo RCE. (Doshi et al., 2023 p. 109:9)\cite{DoshiEtAl2023}}
+    \label{fig:Architettura_Kepler}
+\end{figure}
+
+Un’ulteriore funzionalità di Kepler che contribuisce a ottimizzare le \textit{performance} del sistema è l’aggiornamento incrementale delle viste materializzate, in cui il sistema effettua il processo di \textit{refresh} solamente sui \textit{record} interessati dalle modifiche, rendendolo estremamente più rapido rispetto alla manutenzione completa (Chirkova \& Yang, 2011)\cite{ChirkovaYang2011}.
+\\ \\
+L’interazione tra la fase di manutenzione delle viste materializzate e la fase di ottimizzazione automatica parametrica delle \textit{query} rappresenta un approccio \textit{data-driven} concreto all’ottimizzazione di queste in un moderno \textit{data warehouse}. L’adozione di un modello predittivo incrementale permette un’efficace manutenzione e ottimizzazione dei modelli di costo di ottimizzazione delle \textit{query} anche per carichi di lavoro ed accessi imprevisti (Doshi et al., 2023 \cite{DoshiEtAl2023}; Waheed et al., 2020 \cite{WaheedEtAl2020}).
+\\ \\
+Kepler rappresenta una soluzione efficace all’ottimizzazione di \textit{query}, grazie a tecniche \textit{data-driven} e all’implementazione di algoritmi ibridi e predittivi aggiornabili, al fine di sfruttare appieno le informazioni preesistenti nel sistema. L’efficacia delle \textit{policy} predittive incrementali si traduce in sistemi di configurazione e gestione dei \textit{workload} capaci di raggiungere ottimi compromessi fra le esigenze e i requisiti dei decisori aziendali.\\

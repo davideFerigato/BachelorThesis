@@ -1,0 +1,69 @@
+\chapter{Fondamenti della Business Intelligence e Data Warehouse}
+La gestione efficace delle informazioni aziendali richiede la conoscenza delle architetture e tecnologie dei sistemi di BI e \textit{Data Warehouse}. Verrà affrontato come si distinguono per scopi operativi e strategici, in quanto aiutano nel processo di \textit{decision making}.
+
+\section{Architettura e componenti dei sistemi BI}
+L’architettura dei sistemi di BI è un insieme di \textit{data mining}, \textit{reporting}, OLAP e \textit{data warehouse} (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Amadeo, 2018 \cite{Amadeo2018}). Tutti gli elementi di un sistema di BI, funzionando in sinergia, elaborano i dati in informazioni di valore. Questo schema garantisce la qualità delle analisi e la rapidità richiesta dalle aziende. \\
+
+\begin{wrapfigure}{r}{0.50\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{./adds/Fondamenti_della_Business_Intelligence_e_Data_Warehouse/La_struttura_del_data_werehouse.png}
+    \caption{Esempio di struttura di \textit{data warehouse}. (Inmon, 2002 p. 36)\cite{Inmon2002}}
+    \label{fig:wrap}
+\end{wrapfigure}
+
+
+La piattaforma \textit{data warehouse} OLAP è un elemento cruciale dell’architettura di BI, in grado di fornire un ambiente idoneo ad attività di reporting e ad interrogazioni ad \textit{hoc} (Vaisman \& Zimányi, 2022)\cite{VaismanZimanyi2022}. Lo scopo di OLAP è l’esplorazione e l’aggregazione dei dati rispondendo ai bisogni in continua evoluzione delle imprese. I \textit{database} analitici OLAP differiscono dai \textit{database} transazionali OLTP (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Inmon, 2002 \cite{Inmon2002}), in quanto ottimizzati per operazioni di analisi e aggregazione. La differenza tra questi \textit{database} è anche dovuta al loro \textit{design} fisico, e ha un effetto sulla qualità e la puntualità dei dati analitici (Inmon, 2002)\cite{Inmon2002}.
+\\ \\
+L’importanza di OLAP e del \textit{data warehouse} è tale da aver generato diverse tecnologie e prassi organizzative finalizzate a garantire la qualità, la \textit{security} e la disponibilità delle informazioni (Amadeo, 2018 \cite{Amadeo2018}; Chen et al., 2012 \cite{ChenChiangStorey2012}).
+\\ \\
+Nei contesti competitivi, la possibilità di scalare un’architettura di BI risiede proprio nell’abilità del modello dati e degli strumenti OLAP. L’importanza di queste tematiche viene confermata dagli ultimi \textit{trend} scientifici (analisi scientometrica) su questi sistemi, dove le questioni su scalabilità e interoperabilità sono sempre più in aumento in ambiti legati a \textit{Computer Science, Management }e \textit{Industrial Engineering} (Gurcan et al., 2023)\cite{GurcanEtAl2023a}\cite{GurcanEtAl2023b}.
+
+\input{./adds/Fondamenti_della_Business_Intelligence_e_Data_Warehouse/tabella_BI_subjects}
+
+Le tecnologie ETL estrapolano dati da fonti eterogenee e trasformano i dati secondo regole di \textit{business} (Amadeo, 2018 \cite{Amadeo2018}; Inmon, 2002 \cite{Inmon2002}; Reinschmidt \& Francoise, 2000 \cite{ReinschmidtFrancoise2000}), fino a caricarli nel \textit{data warehouse}. Questo processo garantisce coerenza e qualità (Inmon, 2002 \cite{Inmon2002}; Reinschmidt \& Francoise, 2000 \cite{ReinschmidtFrancoise2000}). Errori e inefficienze nella fase ETL compromettono la validità delle analisi e di conseguenza l’affidabilità delle decisioni (Inmon, 2002)\cite{Inmon2002}. Ogni processo ETL genera dati analitici, ad esempio estrazioni giornaliere possono essere anche decine di migliaia, necessitando così soluzioni di monitoraggio automatizzate (Inmon, 2002)\cite{Inmon2002}.
+\\ \\
+I \textit{framework} ETL centralizzati rendono possibile la gestione centralizzata delle regole di \textit{business}, la standardizzazione del processo di pulizia dati e il monitoraggio costante della qualità (Reinschmidt \& Francoise, 2000)\cite{ReinschmidtFrancoise2000}.
+\\ \\
+Queste soluzioni rispondono inoltre alla crescente domanda di tempistica, tracciabilità ed accuratezza nei processi di analisi (Amadeo, 2018)\cite{Amadeo2018}, aspetto necessario in un’economia sempre più globale e competitiva. È importante, pertanto, approfondire l’analisi delle \textit{pipeline} ETL.
+\\ \\
+Il motore OLAP fornisce funzionalità di analisi multidimensionale di dati storici. Funzionalità quali il \textit{drill-down} e il \textit{drill-up} consentono all’organizzazione di esplorare i dati a differenti livelli di dettaglio (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Chen et al., 2012 \cite{ChenChiangStorey2012}), similmente a quanto avviene in scenari decisionali reali.
+\\ \\
+Per semplificare le interrogazioni, la struttura logica dei \textit{data warehouse} OLAP, basata su schemi a stella o a fiocco di neve, è pensata in modo tale da esporre la realtà aziendale in modo conciso e semplice, facilitando la comprensione anche da parte di personale non tecnico (Vaisman \& Zimányi, 2022)\cite{VaismanZimanyi2022}.
+\\ \\
+Gli strumenti OLAP si sono evoluti per riuscire a fronteggiare la sempre più alta quantità di dati da processare. Questo è stato reso possibile introducendo tecnologie di \textit{caching}, viste materializzate e \textit{big data analytics} (Vaisman \& Zimányi, 2022)\cite{VaismanZimanyi2022}.
+\\ \\
+Dal punto di vista tecnico e organizzativo, gli strumenti OLAP ricoprono un ruolo primario non solo nel \textit{reporting}, ma anche nelle attività di collaborazione e di \textit{decision-making} (Amadeo, 2018 \cite{Amadeo2018}; Chen et al., 2012 \cite{ChenChiangStorey2012}), aspetto che ne evidenzia la strategicità all’interno delle architetture di BI.
+\\ \\
+L’analisi scientometrica effettuata nei sistemi di BI ha evidenziato che l’integrazione OLAP-\textit{data warehouse} incrementa la percentuale di dati analizzati effettivamente usati (Reinschmidt \& Francoise, 2000 \cite{ReinschmidtFrancoise2000}; Chirkova \& Yang, 2011 \cite{ChirkovaYang2011}). Oltre il \SI{93}{\percent} dei dati è tutt’oggi immagazzinato in silos, e non viene usato (Reinschmidt \& Francoise, 2000)\cite{ReinschmidtFrancoise2000}, soprattutto per problemi di progettazione.
+\\ \\
+In futuro l’architettura di BI potrà evolversi aggiungendo strumenti e funzionalità. Uno scenario prevede l’adozione di algoritmi di \textit{machine learning} per l’analisi dei dati, e/o di moduli avanzati di \textit{data mining}, per migliorare la sostenibilità e l’efficienza dell’infrastruttura (Gurcan et al., 2023)\cite{GurcanEtAl2023a}.
+\\ \\
+La soluzione finale prevede la costruzione di un’architettura modulare e scalabile, con lo scopo di ridurre le distanze tra il mondo fisico e quello logico. L’architettura deve essere anche in grado di bilanciare \textit{performance} ed efficienza e di gestire un carico di lavoro mutevole (Gurcan et al., 2023)\cite{GurcanEtAl2023b}.
+
+
+\section{Differenze tra sistemi OLTP e OLAP}
+I sistemi OLTP e OLAP si distinguono nettamente per finalità, requisiti e progettazione. I sistemi OLTP sono pensati per effettuare operazioni veloci ed efficienti di gestione, ad esempio, delle transazioni aziendali. L'obiettivo principale di questi sistemi è quello di effettuare operazioni ripetitive a bassa latenza e in grande numero (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Inmon, 2002 \cite{Inmon2002}). I sistemi OLAP sono pensati per effettuare analisi complesse di grandi quantità di dati, ad esempio, con operazioni di aggregazione e di navigazione multidimensionale. Una \textit{query} di OLAP può richiedere diversi minuti od ore, mentre in OLTP un'operazione complessa in genere non dura più di qualche secondo (Inmon, 2002)\cite{Inmon2002}. \\
+
+\begin{wrapfigure}{l}{0.50\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{./adds/Fondamenti_della_Business_Intelligence_e_Data_Warehouse/snowflake_schema.png}
+    \caption{Esempio di schema \textit{snowflake}. (Renso \& Gozzi, 1990 p. 37)\cite{RensoGozzi1990}}
+    \label{fig:snowflake}
+\end{wrapfigure}
+
+Nei sistemi OLTP è solitamente presente la normalizzazione degli schemi relazionali dei \textit{database}, per prevenire incoerenza nei dati e garantire integrità referenziale (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Renso \& Gozzi, 1990 \cite{RensoGozzi1990}). Nei sistemi OLAP, invece, è più diffusa la denormalizzazione, per velocizzare l'elaborazione delle interrogazioni (con l'utilizzo, ad esempio, di schemi a stella \autoref{fig:star} o a fiocco di neve \autoref{fig:snowflake}). Nei \textit{database} utilizzati dai sistemi OLAP sono infatti contenute informazioni utili ad effettuare operazioni di navigazione e aggregazione multidimensionale. Il \textit{drill-down} (approfondimento dei livelli di dettaglio) e il \textit{roll-up} (generalizzazione degli aggregati) sono operazioni particolarmente veloci e facili in presenza di tabelle dimensionali denormalizzate (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Renso \& Gozzi, 1990 \cite{RensoGozzi1990}).
+\\ \\
+In un sistema OLTP le operazioni principali sono di scrittura, aggiornamento e cancellazione (\textit{write-intensive}) di una quantità di dati con orizzonte temporale generalmente inferiore a 60-90 giorni. Le \textit{query} più complesse prevedono aggregazione sui dati di al massimo pochi giorni. In OLAP le operazioni sono principalmente di lettura (\textit{read-intensive}), su un orizzonte temporale spesso pluri-annuale. I sistemi OLTP sono pensati per essere in tempo reale, cioè reagiscono in modo immediato alle modifiche dei dati. La tipologia di \textit{database} OLTP è pensata per effettuare inserimenti e aggiornamenti in modo efficiente. Le operazioni OLAP, invece, vengono effettuate anche in \textit{batch} (senza reagire immediatamente alle modifiche dei dati) (Inmon, 2002)\cite{Inmon2002}. L'architettura dei \textit{database} utilizzati in OLAP è studiata per effettuare velocemente operazioni di lettura (Inmon, 2002 \cite{Inmon2002}; Pontieri, 1989 \cite{Pontieri1989}). Come ad esempio, è possibile considerare i sistemi utilizzati nei supermercati per la gestione delle vendite: i sistemi OLTP si occupano delle vendite immediate, mentre i sistemi OLAP sono utilizzati per analizzare le vendite su un orizzonte di alcuni anni (Pontieri, 1989)\cite{Pontieri1989}. \\
+
+\begin{wrapfigure}{r}{0.50\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{./adds/Fondamenti_della_Business_Intelligence_e_Data_Warehouse/star.png}
+    \caption{Esempio di schema \textit{star}. (Renso \& Gozzi, 1990 p. 37)\cite{RensoGozzi1990}}
+    \label{fig:star}
+\end{wrapfigure}
+
+L'introduzione delle viste materializzate permette di effettuare interrogazioni complesse in tempi accettabili. Le viste materializzate precalcolano aggregazioni e operazioni di \textit{join}, riducendo i tempi di calcolo in fase di esecuzione. Questa tipologia di viste è essenziale per effettuare analisi OLAP di volumi di dati sempre maggiori (Amadeo, 2018 \cite{Amadeo2018}; Renso \& Gozzi, 1990 \cite{RensoGozzi1990}). Elaborare un'aggregazione complessa in tempo reale comprometterebbe drasticamente le prestazioni di un sistema OLTP. La complessità dei dati di sistemi OLAP richiede, perciò, l'utilizzo di un \textit{data warehouse}, che si presta bene all'adozione delle viste materializzate.
+\\ \\
+Utilizzare l'uno o l'altro sistema o combinare i due dipende dal particolare carico di lavoro. In questo modo entrambi i sistemi lavorano con prestazioni accettabili, ottimizzando le operazioni che meglio si adattano alle proprie architetture (Vaisman \& Zimányi, 2022 \cite{VaismanZimanyi2022}; Inmon, 2002 \cite{Inmon2002}). Tuttavia, le aziende tendono sempre più a utilizzare ampiamente le informazioni che ricavano dai dati e a basare le loro strategie sul \textit{knowledge management} (cioè sulla conoscenza ricavata dai dati), quindi si tende sempre di più ad adottare un'architettura combinata. Questo tipo di infrastrutture, che combina i due sistemi, offre molti vantaggi. Il principale di questi è la possibilità di effettuare sia operazioni \textit{real-time} che operazioni complesse, sfruttando i punti di forza dei due sistemi. Combinando il \textit{data warehouse} con la reattività in tempo reale dei sistemi OLTP si ottiene una soluzione estremamente flessibile (Amadeo, 2018 \cite{Amadeo2018}; Renso \& Gozzi, 1990 \cite{RensoGozzi1990}; Pontieri, 1989 \cite{Pontieri1989}).
+
+\input{./adds/Fondamenti_della_Business_Intelligence_e_Data_Warehouse/tabella_OLTP_OLAP}

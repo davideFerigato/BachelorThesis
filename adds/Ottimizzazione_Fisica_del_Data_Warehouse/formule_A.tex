@@ -1,0 +1,30 @@
+%1
+\begin{equation}
+  C(\mathcal{M'}) = \sum_{m \,\in \, (\mathcal{M'} \, \cup \, \mathcal{B} \, \cup \, \{V\})} maint\_cost(m,\mathcal{M'})
+\end{equation}
+Dove, \(\mathcal{M'}\) è l'insieme di viste e indici materializzati; \(\mathcal{B}\) è l'insieme delle relazioni di base materializzate; \(V\) è la vista primaria; \(maint\_cost(m,\mathcal{M'})\) è il costo di mantenimento di \(m\) dato \(\mathcal{M'}\).
+
+%2
+\begin{equation}
+  \mathcal{C} = g + h
+\end{equation}
+Dove, \(\mathcal{C}\) è il costo totale di manutenzione (cioè \(C(\mathcal{M'})\)); \(g\) è il costo di manutenzione già sostenuto da viste e indici selezionati finora; \(h\) è la stima inferiore del costo rimanente necessario a materializzare il resto di \(\mathcal{M}\).
+
+%3
+\begin{equation}
+  h =\min_{\mathcal{M_U'} \, \subseteq \, \mathcal{M_U}} \Bigl( \sum_{m \, \in \, \mathcal{M_U'}} maint\_cost( m, \, \mathcal{M'} \, \cup \, \mathcal{M_U'}) \Bigr)
+\end{equation}
+Dove, \(\mathcal{M_U}\) è l'insieme di viste e indici ancora da considerare; \(\mathcal{M_U'}\) è un sottoinsieme di \(\mathcal{M_U}\) che si prova a materializzare; L’espressione valuta per ogni \(\mathcal{M_U'}\) la somma dei costi di manutenzione, restituendo il minimo tra tutte le combinazioni (ricerca esaustiva).
+
+%4
+\begin{equation}
+  \mathcal{\hat{C}} = g + \hat{h}
+\end{equation}
+Dove, \(\hat{\mathcal{C}}\) è il limite inferiore del costo totale \(\mathcal{C}\), usando la stima euristica \(\hat{h}\) al posto di \(h\); \(\hat{h}\) è la stima inferiore (più veloce da calcolare) del costo rimanente.
+
+%5
+\begin{equation}
+  \hat{h} = \sum_{m \, \in \, \mathcal{M_U'}} \Bigl( h\_maint\_cost(m,\mathcal{M'}) - max\_benefit(m,\mathcal{M'})\Bigr)
+\end{equation}
+Dove, \(h\_maint\_cost(m,\mathcal{M'})\) è il costo “pessimistico” di mantenimento di \(m\) dato \(\mathcal{M'}\); \(max\_benefit(m,\mathcal{M'})\) è il risparmio massimo atteso grazie a \(m\); L'espressione fornisce un limite inferiore al costo netto di aggiungere \(m\).
+
