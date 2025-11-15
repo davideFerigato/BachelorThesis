@@ -74,5 +74,5 @@ The results converge into operational guidelines: a columnstore and partitioned 
 You can cite this thesis as:
 
 ```text
-Davide Maria Ferigato, "Advanced Query Optimization in Business Intelligence Systems",
+Davide Maria Ferigato, "Ottimizzazione delle Query per Sistemi di Business Intelligence: Tecniche Avanzate per Migliorare le Performance e il Supporto Decisionale",
 Bachelor's Thesis, "Enzo Ferrari" Engineering Department, University of Modena and Reggio Emilia, 2025.
