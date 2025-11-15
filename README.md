@@ -58,11 +58,9 @@ The results converge into operational guidelines: a columnstore and partitioned 
 
 ## Repository Contents
 
-> Adjust this section to match your actual repo layout.
-
-- `thesis/` – PDF of the full thesis (final version and/or drafts).  
+- `/` – PDF of the full thesis (final version and/or drafts).  
 - `slides/` – Presentation slides for the thesis defense.  
-- `sql-examples/` – Example scripts for indexed/materialized views, CTAS, statistics, and diagnostic queries.  
+- `adds/` – Example scripts for indexed/materialized views, CTAS, statistics, and diagnostic queries.  
 - `benchmarks/` – Scripts and notes related to the experimental protocol and performance measurements.
 
 ## Technologies & Tools
@@ -76,5 +74,5 @@ The results converge into operational guidelines: a columnstore and partitioned 
 You can cite this thesis as:
 
 ```text
-<Your Name>, "Advanced Query Optimization in Business Intelligence Systems",
-Bachelor's Thesis, <Department>, <University>, <Year>.
+Davide Maria Ferigato, "Advanced Query Optimization in Business Intelligence Systems",
+Bachelor's Thesis, "Enzo Ferrari" Engineering Department, University of Modena and Reggio Emilia, 2025.
