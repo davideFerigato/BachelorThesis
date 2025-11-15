@@ -1,0 +1,9 @@
+Here’s a polished academic-style translation:
+
+The thesis examines advanced techniques for query optimization in Business Intelligence systems, considering Data Warehouse and ETL architectures. The work integrates theory and practice: from physical design (indexing, partitioning, compression, caching) to view materialization, up to measurable performance metrics and governance. The goal is to define reproducible procedures to reduce latency and I/O while preserving data quality and freshness.
+
+The discussion follows a progressive structure. It recalls the fundamentals of BI and the differences between OLTP and OLAP; it examines ETL quality and the impact of structural metrics; it explores physical design choices for analytical workloads in depth. It then frames the role of materialized views in reducing query costs and, in the applied chapter, analyzes SQL Server and Azure Synapse: creation requirements, automatic query rewriting, data distribution, statistics, use of CTAS and temporary tables, diagnostic tools, and overhead.
+
+The methodology combines a literature review, a comparison of classical approaches for view selection and maintenance, and an experimental protocol inspired by decision-support benchmarks. The metrics considered include average response times and dispersion, maintenance cost in the presence of updates, and impact on I/O and storage.
+
+The results converge into operational guidelines: a columnstore and partitioned physical base, views designed over shared joins and aggregations with consistent distribution, validation through automatic query rewriting, and overhead thresholds for rebuild operations. Overall, the coordinated adoption of these techniques consistently reduces latency and improves the overall efficiency of the Data Warehouse, providing practical and reproducible guidance.
