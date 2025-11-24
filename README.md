@@ -59,7 +59,7 @@ The results converge into operational guidelines: a columnstore and partitioned 
 ## Repository Contents
 
 - `Ottimizzazione_delle_Query_per_Sistemi_di_Business_Intelligence__Tecniche_Avanzate_per_Migliorare_le_Performance_e_il_Supporto_Decisionale.pdf` – PDF of the full thesis (final version and/or drafts).  
-- `Ottimizzazione_delle_Query_per_Sistemi_di_Business_Intelligence__Tecniche_Avanzate_per_Migliorare_le_Performance_e_il_Supporto_Decisionale.pptx` – Presentation slides for the thesis defense.  
+- `Presentation slides.pdf` – Presentation slides for the thesis defense.  
 - `adds/` – Example scripts for indexed/materialized views, CTAS, statistics, and diagnostic queries.
 
 ## Technologies & Tools
