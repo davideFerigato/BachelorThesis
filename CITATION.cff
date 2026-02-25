@@ -1,8 +1,23 @@
 cff-version: 1.2.0
-message: "If you use this thesis or its code, please cite it as below."
+message: "If you use this thesis or its code in your work, please cite it as follows."
 authors:
   - family-names: "Ferigato"
     given-names: "Davide Maria"
-title: "Query Optimization for Business Intelligence Systems: Advanced Techniques to Improve Performance and Decision Support"
+    orcid: ""  # Se hai un ORCID, inseriscilo qui (es. "https://orcid.org/0000-0000-0000-0000")
+title: "Ottimizzazione delle Query per Sistemi di Business Intelligence: Tecniche Avanzate per Migliorare le Performance e il Supporto Decisionale"
 date-released: 2025-12-02
-url: "https://github.com/DavideFerigato/BachelorThesis"
+url: "https://github.com/davideFerigato/BachelorThesis"
+repository-code: "https://github.com/DavideFerigato/BachelorThesis"
+abstract: "This thesis analyzes advanced techniques for query optimization in Business Intelligence systems, considering Data Warehouse and ETL architectures. The work integrates theory and practice: from physical design (indexing, partitioning, compression, caching) to view materialization, up to measurable performance metrics and governance. The applicative chapter analyzes SQL Server and Azure Synapse: creation requirements, automatic query rewrite, data distribution, statistics, use of CTAS and temporary tables, diagnostic tools, and overhead management. Results converge into operational guidelines validated through the TPC-DS benchmark."
+keywords:
+  - "business intelligence"
+  - "data warehouse"
+  - "query optimization"
+  - "materialized views"
+  - "sql server"
+  - "azure synapse"
+  - "etl"
+  - "columnstore"
+  - "physical design"
+  - "tpc-ds"
+license: "MIT"
