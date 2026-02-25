@@ -1,77 +1,126 @@
-# Advanced Query Optimization in Business Intelligence Systems
+# Query Optimization for Business Intelligence Systems: Advanced Techniques to Improve Performance and Decision Support
 
-Bachelor's thesis on advanced techniques for query optimization in Business Intelligence (BI) systems, with a focus on Data Warehouse and ETL architectures and their impact on analytical workloads.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![GitHub last commit](https://img.shields.io/github/last-commit/DavideFerigato/BachelorThesis)
+![LaTeX](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-CC2927?logo=microsoft-sql-server)
+![Azure Synapse](https://img.shields.io/badge/Azure%20Synapse-Analytics-0078D4?logo=microsoft-azure)
 
-## Abstract
+**Author**: Davide Maria Ferigato  
+**Supervisor**: Prof. Domenico Beneventano  
+**University**: University of Modena and Reggio Emilia, Department of Engineering "Enzo Ferrari"  
+**Degree**: Bachelor's Degree in Computer Engineering (L-08)  
+**Academic Year**: 2024/2025  
 
-This work examines advanced techniques for query optimization in Business Intelligence systems, considering Data Warehouse and ETL architectures. It integrates theory and practice: from physical design (indexing, partitioning, compression, caching) to view materialization, up to measurable performance metrics and governance. The main goal is to define reproducible procedures to reduce latency and I/O while preserving data quality and freshness.
+This repository contains the complete project for my bachelor's thesis, which addresses the topic of **query performance optimization in Business Intelligence systems**. The work analyzes the impact of ETL process evolution, physical design techniques (indexing, partitioning, compression, caching), and the implementation of **materialized views** on Microsoft platforms (SQL Server and Azure Synapse).
 
-The thesis follows a progressive structure. It recalls the fundamentals of BI and the differences between OLTP and OLAP; it examines ETL quality and the impact of structural metrics; it explores physical design choices for analytical workloads in depth. It then frames the role of materialized views in reducing query costs and, in the applied chapter, analyzes SQL Server and Azure Synapse: creation requirements, automatic query rewriting, data distribution, statistics, usage of CTAS and temporary tables, diagnostic tools, and overhead.
+> *"A ship in port is safe, but that's not what ships are built for."* — Grace Murray Hopper
 
-The methodology combines a literature review, a comparison of classical approaches for view selection and maintenance, and an experimental protocol inspired by decision-support benchmarks. The metrics considered include average response times and dispersion, maintenance cost in the presence of updates, and impact on I/O and storage.
+## 📥 Direct Download
 
-The results converge into operational guidelines: a columnstore and partitioned physical base, views designed over shared joins and aggregations with consistent data distribution, validation through automatic query rewriting, and overhead thresholds for rebuild operations. Overall, the coordinated adoption of these techniques consistently reduces query latency and improves the global efficiency of the Data Warehouse, providing practical and reproducible guidance.
+- 📄 **Thesis (full PDF)**: [thesis.pdf](thesis.pdf)
+- 📊 **Presentation slides**: [presentation/slides.pdf](presentation/slides.pdf)
 
-## Keywords
+## 📋 Table of Contents
 
-- Business Intelligence (BI)  
-- Data Warehouse  
-- ETL (Extract–Transform–Load)  
-- Query Optimization  
-- Physical Design (indexes, partitioning, compression, caching)  
-- Materialized Views  
-- SQL Server  
-- Azure Synapse Analytics  
-- Columnstore  
-- Performance Metrics & Governance  
+- [Abstract](#abstract)
+- [Repository Structure](#repository-structure)
+- [Technologies Used](#technologies-used)
+- [Code Examples](#code-examples)
+- [How to Compile the Thesis (LaTeX)](#how-to-compile-the-thesis-latex)
+- [License](#license)
+- [Contact](#contact)
 
-## Main Objectives
+## 📄 Abstract
 
-- Analyze the impact of physical design techniques on query performance in BI workloads.  
-- Study the role of materialized views in reducing query cost and latency.  
-- Evaluate how SQL Server and Azure Synapse implement and exploit materialized views for OLAP scenarios.  
-- Define reproducible procedures and guidelines for performance tuning in Data Warehouse environments.
+This thesis analyzes advanced techniques for query optimization in Business Intelligence systems, considering Data Warehouse and ETL architectures. The work integrates theory and practice: from physical design (indexing, partitioning, compression, caching) to view materialization, up to measurable performance metrics and governance. The goal is to define reproducible procedures to reduce latency and I/O while preserving data quality and freshness.
 
-## Methodology
+The discussion follows a progressive path: fundamentals of BI and OLTP/OLAP differences, ETL quality and structural metrics, physical design choices for analytical workloads, and the role of materialized views in reducing query costs. The applicative chapter analyzes SQL Server and Azure Synapse: creation requirements, automatic query rewrite, data distribution, statistics, use of CTAS and temporary tables, diagnostic tools, and overhead management.
 
-- **Literature review** on BI architectures, Data Warehousing, ETL quality, and classical approaches to view selection and maintenance.  
-- **Theoretical analysis** of physical design choices for analytical workloads (indexing, partitioning, compression, caching).  
-- **Practical study** of SQL Server and Azure Synapse features:
-  - Indexed/materialized views  
-  - Automatic query rewriting and view matching  
-  - Data distribution strategies  
-  - Statistics, CTAS, temporary tables, and diagnostic tools  
-- **Experimental evaluation** using decision-support style workloads, measuring:
-  - Average query times and dispersion  
-  - Maintenance overhead in the presence of data updates  
-  - Impact on I/O and storage consumption  
+The results converge into operational guidelines: columnstore and partitioning as a physical base, views designed on shared joins and aggregations with consistent distribution, validation through automatic rewrite, and overhead thresholds for rebuild. Overall, the coordinated adoption of these techniques stably reduces latencies and improves the overall efficiency of the Data Warehouse, providing applicable and replicable guidelines.
 
-## Contributions
+## 🗂️ Repository Structure
 
-- A structured comparison of advanced query optimization techniques for BI systems.  
-- A practical framework for designing and validating materialized views on SQL Server and Azure Synapse.  
-- Operational guidelines that link:
-  - Columnstore and partitioning strategies  
-  - Design of views over shared joins and aggregations  
-  - Overhead-oriented thresholds for rebuild and maintenance  
-- A reproducible methodology that can be applied to real-world Data Warehouses to systematically reduce latency and improve efficiency.
+The structure follows a standard LaTeX project organization, with separate chapters and supplementary materials logically organized.
 
-## Repository Contents
+```
+├── main.tex                                    # Main LaTeX file
+├── main.bib                                     # Bibliography
+├── thesis.pdf                                    # Thesis in PDF format (final version)
+├── .gitignore                                    # Git ignore file
+├── LICENSE                                       # MIT License
+│
+├── chapters/                                     # Thesis chapters (included by main.tex)
+│   ├── Abstract.tex
+│   ├── introduction.tex
+│   ├── Fondamenti_della_Business_Intelligence_e_Data_Warehouse.tex
+│   ├── Evoluzione_e_Qualità_dei_Processi_ETL.tex
+│   ├── Viste_Materializzate.tex
+│   ├── Ottimizzazione_Fisica_del_Data_Warehouse.tex
+│   ├── Viste_materializzate_OLAP_su_SQL_Server_e_Synapse.tex
+│   └── conclusion.tex
+│
+├── adds/                                         # Supplementary materials (images, snippets, tables)
+│   ├── cover-page/                               # Cover images
+│   ├── Evoluzione_e_Qualità_dei_Processi_ETL/    # ETL chapter assets
+│   ├── Fondamenti_della_Business_Intelligence_e_Data_Warehouse/
+│   ├── Ottimizzazione_Fisica_del_Data_Warehouse/
+│   ├── Viste_Materializzate/
+│   └── Viste_materializzate_OLAP_su_SQL_Server_e_Synapse/
+│
+├── code/                                          # All SQL scripts and code examples
+│   ├── sql-server/                                 # SQL Server examples
+│   ├── synapse/                                    # Azure Synapse examples
+│   ├── etl-example/                                # ETL-related snippets
+│   └── README.md                                   # Detailed code documentation (in English)
+│
+└── presentation/                                  # Defense materials
+    └── slides.pdf                                  # Presentation slides
+```
 
-- `Ottimizzazione_delle_Query_per_Sistemi_di_Business_Intelligence__Tecniche_Avanzate_per_Migliorare_le_Performance_e_il_Supporto_Decisionale.pdf` – PDF of the full thesis (final version and/or drafts).  
-- `Presentation slides.pdf` – Presentation slides for the thesis defense.  
-- `adds/` – Example scripts for indexed/materialized views, CTAS, statistics, and diagnostic queries.
+## 💻 Technologies Used
 
-## Technologies & Tools
+- **Databases & Data Warehousing:** Microsoft SQL Server 2019, Azure Synapse Analytics (Dedicated SQL Pool)
+- **Languages:** T-SQL, LaTeX
+- **Key Concepts:** Data Warehousing, Dimensional Modeling, ETL, Materialized Views (Indexed Views / Materialized Views), Query Optimization, OLAP, Columnstore Indexes, Partitioning, Compression, Caching, Query Hints (NOEXPAND/EXPAND VIEWS), CTAS, TPC-DS Benchmark
+- **Tools:** Overleaf, SQL Server Management Studio (SSMS), Azure Data Studio, Git
 
-- **Database systems:** Microsoft SQL Server, Azure Synapse Analytics  
-- **Paradigm:** Data Warehouse / OLAP  
-- **Topics:** physical design, materialized views, query optimizer behavior, performance tuning  
+## 🔍 Code Examples
 
-## How to Cite
+All SQL scripts discussed in the thesis are available in the [`code/`](code/) folder, organized by platform. Each script is commented and ready to run in a suitable environment.
 
-You can cite this thesis as:
+| Platform | Focus Area | Key Scripts |
+|----------|------------|-------------|
+| **SQL Server** | Indexed Views, Query Hints, Columnstore Monitoring | [`01_creazione_vista_indicizzata.sql`](code/sql-server/01_creazione_vista_indicizzata.sql)<br>[`02_NOEXPAND_EXPAND_VIEWS.sql`](code/sql-server/02_NOEXPAND_EXPAND_VIEWS.sql)<br>[`03_columnstore_rowgroup_stats.sql`](code/sql-server/03_columnstore_rowgroup_stats.sql) |
+| **Azure Synapse** | Materialized Views, CTAS, Optimization Cycle, TPC-DS Evaluation | [`01_create_materialized_view.sql`](code/synapse/01_create_materialized_view.sql)<br>[`02_optimization_loop_ctas_mv.sql`](code/synapse/02_optimization_loop_ctas_mv.sql)<br>[`03_operational_cycle_explain.sql`](code/synapse/03_operational_cycle_explain.sql)<br>[`04_tpcds_evaluation.sql`](code/synapse/04_tpcds_evaluation.sql) |
+| **ETL Examples** | Miscellaneous snippets | [`codice_partizione.sql`](code/etl-example/codice_partizione.sql) |
 
-```text
-Davide Maria Ferigato, "Ottimizzazione delle Query per Sistemi di Business Intelligence: Tecniche Avanzate per Migliorare le Performance e il Supporto Decisionale",
-Bachelor's Thesis, "Enzo Ferrari" Engineering Department, University of Modena and Reggio Emilia, 2025.
+For a detailed description of each script and instructions on how to use them, please refer to the [`code/README.md`](code/README.md) file.
+
+## 🚀 How to Compile the Thesis (LaTeX)
+
+To compile the thesis locally and generate the PDF:
+
+```bash
+pdflatex main.tex
+biber main
+pdflatex main.tex
+pdflatex main.tex
+```
+
+Alternatively, you can import the entire folder into [Overleaf](https://www.overleaf.com) and compile online (make sure to also upload the `chapters/` and `adds/` folders).
+
+## 📜 License
+
+The source code in this repository is distributed under the MIT License.  
+The thesis text is copyright © 2025 Davide Maria Ferigato. All rights reserved.
+
+## 📧 Contact
+
+**Davide Maria Ferigato**
+
+- **GitHub:** [@DavideFerigato](https://github.com/DavideFerigato)
+
+---
+
+⭐ If you find this project interesting or useful, please leave a star!
