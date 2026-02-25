@@ -72,7 +72,7 @@ The structure follows a standard LaTeX project organization, with separate chapt
 │   ├── sql-server/                                 # SQL Server examples
 │   ├── synapse/                                    # Azure Synapse examples
 │   ├── etl-example/                                # ETL-related snippets
-│   └── README.md                                   # Detailed code documentation (in English)
+│   └── README.md                                   # Detailed code documentation
 │
 └── presentation/                                  # Defense materials
     └── slides.pdf                                  # Presentation slides
