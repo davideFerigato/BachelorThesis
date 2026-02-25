@@ -1,0 +1,21 @@
+Input: MM, 1prec
+Output: Optimal M1prime
+
+Let state set S1math = {s1math}, where s1math is a partial state having
+    MC(s1math) = M1prime(s1math) = 1emptyset and MU(s1math) = MM (base relations and V are materialized)
+Loop
+    Select the partial state s1math 1in S1math with the minimum value of Chat
+    If MC(s1math) 1equiv MM, return M1prime(s1math)
+    Let S1math = S1math - {s1math}
+    For each view or index m1math 1in MU(s1math) such that for all m1prime 1prec m1math: m1prime 1in MC(s1math)
+        Construct partial state s1prime such that
+            MC(s1prime) = MC(s1math) 1cup {m1math}
+            MU(s1prime) = MU(s1math) - {m1math}
+            M1prime(s1prime) = MC(s1math) 1cup {m1math}
+        Construct partial state s2prime such that
+            MC(s2prime) = MC(s1math) 1cup {m1math}
+            MU(s2prime) = MU(s1math) - {m1math}
+            M1prime(s2prime) = MC(s1math)
+        Let S1math = S1math 1cup {s1prime} 1cup {s2prime}
+    Endfor
+Endloop
