@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/DavideFerigato/BachelorThesis)
+[![Compilation status](https://github.com/DavideFerigato/BachelorThesis/actions/workflows/compile.yml/badge.svg)](https://github.com/DavideFerigato/BachelorThesis/actions/workflows/compile.yml)
 ![LaTeX](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-CC2927?logo=microsoft-sql-server)
 ![Azure Synapse](https://img.shields.io/badge/Azure%20Synapse-Analytics-0078D4?logo=microsoft-azure)
