@@ -1,18 +1,24 @@
 name: Compile LaTeX
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: xu-cheng/texlive-action/full@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/texlive-action@v2
         with:
           run: |
             pdflatex main.tex
             biber main
             pdflatex main.tex
             pdflatex main.tex
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
         with:
           name: thesis.pdf
           path: main.pdf
