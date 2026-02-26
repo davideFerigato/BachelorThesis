@@ -34,4 +34,4 @@ ALTER MATERIALIZED VIEW dbo.mv_SalesByStoreMonth REBUILD;
 -- 5) CACHE vs MV: attivare/disattivare la result-set cache per test comparativi
 SET RESULT_SET_CACHING ON;   -- riuso solo full-result per query identiche
 -- Eseguire N volte la stessa SELECT per osservare hit/miss della cache
-SET RESULT_SET_CACHING OFF;  -- disabilita la cache, resta il riuso “parziale” via MV
+SET RESULT_SET_CACHING OFF;  -- disabilita la cache, resta il riuso "parziale" via MV
