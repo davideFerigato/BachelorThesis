@@ -1,14 +1,32 @@
-# Query Optimization for Business Intelligence Systems: Advanced Techniques to Improve Performance and Decision Support
+<p align="center">
+  <img src="adds/cover-page/CLASSICpuro.png" alt="Thesis Logo" width="250">
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![GitHub last commit](https://img.shields.io/github/last-commit/DavideFerigato/BachelorThesis)
-[![Compilation status](https://github.com/DavideFerigato/BachelorThesis/actions/workflows/compile.yml/badge.svg)](https://github.com/DavideFerigato/BachelorThesis/actions/workflows/compile.yml)
-![LaTeX](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-CC2927?logo=microsoft-sql-server)
-![Azure Synapse](https://img.shields.io/badge/Azure%20Synapse-Analytics-0078D4?logo=microsoft-azure)
-[![DOI](https://zenodo.org/badge/1035697063.svg)](https://doi.org/10.5281/zenodo.20709853)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/DavideFerigato/BachelorThesis)
+<h1 align="center">Query Optimization for Business Intelligence Systems: Advanced Techniques to Improve Performance and Decision Support</h1>
 
+<p align="center">
+  <em>Bachelor's Thesis – University of Modena and Reggio Emilia</em>
+</p>
+
+<p align="center">
+  <!-- Badges -->
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  </a>
+  <img src="https://img.shields.io/github/last-commit/DavideFerigato/BachelorThesis" alt="GitHub last commit">
+  <a href="https://github.com/DavideFerigato/BachelorThesis/actions/workflows/compile.yml">
+    <img src="https://github.com/DavideFerigato/BachelorThesis/actions/workflows/compile.yml/badge.svg" alt="Compilation status">
+  </a>
+  <img src="https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg" alt="LaTeX">
+  <img src="https://img.shields.io/badge/SQL%20Server-2019-CC2927?logo=microsoft-sql-server" alt="SQL Server">
+  <img src="https://img.shields.io/badge/Azure%20Synapse-Analytics-0078D4?logo=microsoft-azure" alt="Azure Synapse">
+  <a href="https://doi.org/10.5281/zenodo.20709853">
+    <img src="https://zenodo.org/badge/1035697063.svg" alt="DOI">
+  </a>
+  <img src="https://img.shields.io/github/v/release/DavideFerigato/BachelorThesis" alt="GitHub release (latest by date)">
+</p>
+
+---
 
 **Author**: Davide Maria Ferigato  
 **Supervisor**: Prof. Domenico Beneventano  
